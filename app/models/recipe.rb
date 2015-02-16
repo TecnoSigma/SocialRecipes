@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  #before_action :authenticate_member!
+
   validates_presence_of :name_recipe, :cuisine, :type_food, :preferences, :ingredients, :directions
   validates :served_people, numericality: { only_integer: true }
   validates :dificulty, inclusion: { in: %w(Fácil Médio Difícil)}

@@ -32,6 +32,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # is optional, but recommended. It automatically adds the proper vendor prefixes to your CSS code when it is compiled.
 gem 'autoprefixer-rails'
 
+# Gem Devise - https://github.com/plataformatec/devise
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
