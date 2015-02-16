@@ -1,0 +1,15 @@
+<h1><%= @recipe.name_recipe %></h1>
+<br>
+<%= image_tag(@recipe.image.url(:medium)) %>
+<ul>
+  <li><strong>Cozinha: </strong><%= @recipe.cuisine %></li><br>
+  <li><strong>Tipo de Comida: </strong><%= @recipe.type_food %></li><br>
+  <li><strong>Preferência de Comida: </strong><%= @recipe.preferences %></li><br>
+  <li><strong>Quantidade de Pratos: </strong><%= @recipe.served_people %></li><br>
+  <li><strong>Tempo de Preparo (hh:mm): </strong><%= @recipe.time_preparation.hour.to_s + ":" + @recipe.time_preparation.min.to_s %></li><br>
+  <li><strong>Dificuldade: </strong><%= @recipe.dificulty %></li><br>
+  <li><strong>Ingredientes: </strong><%= @recipe.ingredients %></li><br>
+  <li><strong>Passo a Passo: </strong><%= @recipe.directions %></li><br>
+</ul>
+
+<%= link_to "Insira uma nova receita", new_recipe_path %>
