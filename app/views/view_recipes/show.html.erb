@@ -1,0 +1,16 @@
+<h1><strong>Visualização de Receitas</strong></h1>
+<br>
+<% for i in 1..@recipes.count do %>
+  <% r = @recipes.find(i) %>
+  <%= image_tag(r.image.url(:medium)) %>
+  <br>
+  <label>Nome da Receita: </label>
+  <%= r.name_recipe %>
+  <br>
+  <label>Tipo da Cozinha: </label>
+  <%= r.cuisine %>
+  <br>
+  <%= link_to "Mais Detalhes...", controller: "recipes", action: "show", id: r.id.to_s %>
+  <br>
+  <br>
+<% end %>
