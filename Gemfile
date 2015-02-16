@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Gem Paperclip - https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 4.2"
 
+# Gem Bootstrap
+gem 'bootstrap-sass', '~> 3.3.3'
+
+# is optional, but recommended. It automatically adds the proper vendor prefixes to your CSS code when it is compiled.
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

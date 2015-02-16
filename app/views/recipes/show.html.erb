@@ -1,6 +1,8 @@
-<h1><%= @recipe.name_recipe %></h1>
+<h1><strong><%= @recipe.name_recipe %></strong></h1>
 <br>
 <%= image_tag(@recipe.image.url(:medium)) %>
+<br>
+<br>
 <ul>
   <li><strong>Cozinha: </strong><%= @recipe.cuisine %></li><br>
   <li><strong>Tipo de Comida: </strong><%= @recipe.type_food %></li><br>
