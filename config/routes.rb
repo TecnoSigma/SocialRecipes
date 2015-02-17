@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :view_recipes
   resources :painel_adm
 
-  resources :cuisines, only: [:new]
-  get '/new_cuisine', to: 'cuisines#new'
+  #resources :cuisines, only: [:new]
+  #get '/new_cuisine', to: 'cuisines#new'
 
   root 'home#index'
   get '/new_recipe', to: 'recipes#new'
