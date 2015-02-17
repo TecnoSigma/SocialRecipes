@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  
+  #before_action :authenticate_user!, only: [:create, :new, :show]
+
   def new
     @recipe = Recipe.new
   end
