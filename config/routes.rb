@@ -2,16 +2,18 @@ Rails.application.routes.draw do
 
   devise_for :admins
   devise_for :users
-  resources :recipes
-  resources :view_recipes
-  resources :painel_adm
 
-  #resources :cuisines, only: [:new]
-  #get '/new_cuisine', to: 'cuisines#new'
+  resources :recipes
+  resources :cuisines
+  resources :view_recipes,  only: [:show]
+  resources :painel_adm,    only: [:index, :show]
+
+  get '/new_recipe',        to: 'recipes#new'
+  get '/recipes/show/:id',  to: 'recipes#show'
+
+  get '/new_cuisine',       to: 'cuisines#new'
 
   root 'home#index'
-  get '/new_recipe', to: 'recipes#new'
-  get '/recipes/show/:id', to: 'recipes#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

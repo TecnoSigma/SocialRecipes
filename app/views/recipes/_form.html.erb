@@ -13,7 +13,7 @@
     <label>Nome da Receita*</label><br>
     <%= f.text_field :name_recipe %><br><br>
     <label>Cozinha*</label><br>
-    <%= f.text_field :cuisine %><br><br>
+     <%= f.select :cuisine, @list_cuisine.sort.collect {|c| [ c ] } %><br><br>
     <label>Tipo de Comida*</label><br>
     <%= f.text_field :type_food %><br><br>
     <label>Preferência de Comida*</label><br>
