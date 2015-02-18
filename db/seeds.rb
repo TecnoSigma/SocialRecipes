@@ -6,16 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  r = Recipe.create
-  r.name_recipe = "Angu"
-  r.cuisine = "Brasileira"
-  r.type_food = "Principal"
-  r.preferences = "Calórica"
-  r.served_people = 5
-  r.time_preparation = "00:30"
-  r.dificulty = "Fácil"
-  r.ingredients = "Fubá, Água e Sal"
-  r.directions = "Coloque água em uma panela até obter ponto de fervura, adicione pitadas de sal na água. Deixe dissolver. Acrescente o fubá aos poucos sempre mexendo para não empelotar. Mexa com uma colher de pau até conseguir uma massa homogênea."
-
-  c = Cuisine.create
-  c.cuisine = "Brasileira"
+20.times do
+  r = Recipe.new
+  r.name_recipe         = "Angu"
+  r.cuisine             = "Brasileira"
+  r.type_food           = "Principal"
+  r.preferences         = "Calórica"
+  r.served_people       = 5
+  r.time_preparation    = "00:30:00"
+  r.dificulty           = "Fácil"
+  r.ingredients         = "Fubá, Água e Sal"
+  r.directions          = "Coloque água em uma panela até obter ponto de fervura, acrescentar os ingredientes aos poucos"
+  r.image_file_name     = "teste-vocacional.jpg"
+  r.image_content_type  = "image/jpeg"
+  r.image_file_size     = 22596
+  r.image_updated_at    = Time.now
+  r.save
+end
