@@ -9,6 +9,7 @@ class CuisinesController < ApplicationController
     list.each do |c|
       @list_cuisine << c.name
     end
+    
   end
 
   def create

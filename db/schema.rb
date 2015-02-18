@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217134610) do
+ActiveRecord::Schema.define(version: 20150218013800) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20150217134610) do
     t.string   "name"
   end
 
+  create_table "preferences", force: :cascade do |t|
+    t.string   "preferences"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string   "name_recipe"
     t.string   "cuisine"
@@ -53,6 +59,12 @@ ActiveRecord::Schema.define(version: 20150217134610) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "type_food"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
