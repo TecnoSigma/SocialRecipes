@@ -11,14 +11,14 @@ RSpec.describe CuisinesController, type: :controller do
     end
 
     it "Should create a new cuisine" do
-      post :create , :cuisine => cuisinecreated
+      post :create, :cuisine => cuisinecreated
       expect(Cuisine.count).to eq(1)
     end
   end
 
   describe "#create" do
     it "Should create a new cuisine" do
-      post :create , :cuisine => cuisinecreated
+      post :create, :cuisine => cuisinecreated
       expect(Cuisine.count).to eq(1)
     end
   end

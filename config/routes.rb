@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :recipes
   resources :cuisines
+  resources :preferences
+  resources :types
   resources :view_recipes,  only: [:show]
   resources :painel_adm,    only: [:index, :show]
 
@@ -12,6 +14,10 @@ Rails.application.routes.draw do
   get '/recipes/show/:id',  to: 'recipes#show'
 
   get '/new_cuisine',       to: 'cuisines#new'
+
+  get '/new_preference',    to: 'preferences#new'
+
+  get '/new_type',          to: 'types#new'
 
   root 'home#index'
 

@@ -17,7 +17,7 @@
     <label>Tipo de Comida*</label><br>
     <%= f.text_field :type_food %><br><br>
     <label>Preferência de Comida*</label><br>
-    <%= f.text_field :preferences %><br><br>
+    <%= f.select :preferences, @list_preference.sort.collect {|p| [ p ] } %><br><br>
     <label>Quantidade de Pratos</label><br>
     <%= f.text_field :served_people %><br><br>
     <label>Tempo de Preparo (hh:mm)</label><br>

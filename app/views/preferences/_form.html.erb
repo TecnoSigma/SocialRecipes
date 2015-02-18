@@ -1,0 +1,24 @@
+<h1><strong>Cadastro de Preferências de Comida</strong></h1>
+<%= form_for(@preference) do |f| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "Erro") %>: *Preenchimento obrigatório!</h2>
+      <ul>
+      <% @preference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <label>Lista de Preferências de Comidas Cadastradas</label><br>
+  <select size="10">
+    <%= @list_preference.sort.each do |p| %>
+      <option><%= p %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label>Preferência de Comida*</label><br>
+  <%= f.text_field :preference_food %><br><br>
+  <button type="submit">Salvar Preferência de Comida</button>
+<% end %>

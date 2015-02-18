@@ -11,6 +11,13 @@ class RecipesController < ApplicationController
     list = Cuisine.all
     list.each do |c|
       @list_cuisine << c.name
+
+    #Lista de preferências de comida
+    @list_preference = Array.new
+    list = Preference.all
+    list.each do |c|
+      @list_preference << c.preference_food
+    end
     end
   end
 
