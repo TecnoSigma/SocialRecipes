@@ -5,8 +5,9 @@ RSpec.describe CuisinesController, type: :controller do
   let(:cuisinecreated) {{id: 1, name: "Brasileira", created_at: Time.now, updated_at: Time.now}}
 
   describe "Should access the admin panel" do
-    it "Should create a new array" do
-
+    it "Should create a new array of the list_cuisine" do
+      list_cuisine = Array.new
+      expect(list_cuisine.count).to eq(0)
     end
 
     it "Should create a new cuisine" do
