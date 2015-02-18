@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
     list = Cuisine.all
     list.each do |c|
       @list_cuisine << c.name
+    end
 
     #Lista de preferências de comida
     @list_preference = Array.new
@@ -18,7 +19,14 @@ class RecipesController < ApplicationController
     list.each do |c|
       @list_preference << c.preference_food
     end
+
+    #Lista de tipos de comida
+    @list_type = Array.new
+    list = Type.all
+    list.each do |c|
+      @list_type << c.type_food
     end
+
   end
 
   def create

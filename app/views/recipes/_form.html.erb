@@ -15,7 +15,7 @@
     <label>Cozinha*</label><br>
      <%= f.select :cuisine, @list_cuisine.sort.collect {|c| [ c ] } %><br><br>
     <label>Tipo de Comida*</label><br>
-    <%= f.text_field :type_food %><br><br>
+    <%= f.select :type_food, @list_type.sort.collect {|t| [ t ] } %><br><br>
     <label>Preferência de Comida*</label><br>
     <%= f.select :preferences, @list_preference.sort.collect {|p| [ p ] } %><br><br>
     <label>Quantidade de Pratos</label><br>

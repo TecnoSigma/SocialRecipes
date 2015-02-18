@@ -1,0 +1,24 @@
+<h1><strong>Cadastro de Tipos de Comida</strong></h1>
+<%= form_for(@type) do |f| %>
+  <% if @type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@type.errors.count, "Erro") %>: *Preenchimento obrigatório!</h2>
+      <ul>
+      <% @type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <label>Lista de Tipos de Comida Cadastradas</label><br>
+  <select size="10">
+    <%= @list_type.sort.each do |t| %>
+      <option><%= t %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label>Tipos de Comida*</label><br>
+  <%= f.text_field :type_food %><br><br>
+  <button type="submit">Salvar Tipo de Comida</button>
+<% end %>
