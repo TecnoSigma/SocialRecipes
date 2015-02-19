@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :cuisines
   resources :preferences
   resources :types
+  resources :last_recipes,  only: [:index]
   resources :view_recipes,  only: [:show]
   resources :painel_adm,    only: [:index, :show]
 
