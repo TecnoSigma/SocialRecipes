@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TypesController, type: :controller do
 
-  let(:typescreated) {{id: 1, type_food: "Entrada", created_at: Time.now, updated_at: Time.now}}
+  let(:typescreated) {{ type_food: "Entrada" }}
 
   describe "Should access the admin panel" do
     it "Should create a new array of the list_type" do
@@ -18,16 +18,19 @@ RSpec.describe TypesController, type: :controller do
 
   describe "#create" do
     it "Should create a new type" do
-      post :create, :type => typescreated
+      post :create, type: typescreated
       expect(Type.count).to eq(1)
     end
   end
 
   describe "#show" do 
     it "Should list the type saved" do
-      @type = Type.create!(typescreated)
-      get :show, id: @type.id
+      type = Type.create!(typescreated)
+      get :show, id: type.id
       expect(response).to have_http_status(:success)
+
+      expect(assigns(:type)).to eq(type)
+
     end
   end
 
