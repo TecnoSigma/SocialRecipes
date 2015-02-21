@@ -1,0 +1,10 @@
+<h1><strong>Visualização de Receitas</strong></h1>
+<br>
+<%= form_tag(view_recipes_categories_path, :method => "post") do %>
+<%= radio_button_tag "view", "t_food", true %>&nbsp;Comida&nbsp;&nbsp;
+<%= radio_button_tag "view", "t_cuisine", false %>&nbsp;Cozinha&nbsp;&nbsp;
+<%= radio_button_tag "view", "t_preference", false %>&nbsp;Preferência&nbsp;&nbsp;
+<br>
+<br>
+<%= submit_tag "Exibir Receitas" , class: "btn btn-default"%>
+<% end %>

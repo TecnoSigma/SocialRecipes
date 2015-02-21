@@ -7,9 +7,15 @@ Rails.application.routes.draw do
   resources :cuisines
   resources :preferences
   resources :types
-  resources :last_recipes,  only: [:index]
-  resources :view_recipes,  only: [:show]
-  resources :painel_adm,    only: [:index, :show]
+  resources :view_recipes,              only: [:show]
+  resources :painel_adm,                only: [:index, :show]
+  resources :view_recipes_categories,   only: [:index]
+
+  get '/view_recipes_categories/type_food',        to: 'view_recipes_categories#type_food'
+  get '/view_recipes_categories/type_preference',  to: 'view_recipes_categories#type_preference'
+  get '/view_recipes_categories/type_cuisine',     to: 'view_recipes_categories#type_cuisine'
+
+  get '/view_categories',   to: 'view_recipes_categories#index'
 
   get '/new_recipe',        to: 'recipes#new'
   get '/recipes/show/:id',  to: 'recipes#show'

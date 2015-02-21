@@ -1,0 +1,19 @@
+<h1><strong>Visualização por tipos de preferência</strong></h1>
+<br>
+<% @view_type_preference.each do |preference| %>
+  <%= image_tag(preference.image.url(:thumb)) %>
+  <br>
+  <br>
+  <strong><%= preference.name_recipe %></strong>
+  <ul>
+    <li><strong>Cozinha: </strong><%= preference.cuisine %></li>
+    <li><strong>Tipo de Comida: </strong><%= preference.type_food %></li>
+    <li><strong>Preferência de Comida: </strong><%= preference.preferences %></li>
+    <li><strong>Quantidade de Pratos: </strong><%= preference.served_people %></li>
+    <li><strong>Tempo de Preparo (hh:mm): </strong><%= preference.time_preparation.hour.to_s + ":" + preference.time_preparation.min.to_s %></li>
+    <li><strong>Dificuldade: </strong><%= preference.dificulty %></li>
+    <li><strong>Ingredientes: </strong><%= preference.ingredients %></li>
+    <li><strong>Passo a Passo: </strong><%= preference.directions %></li>
+  </ul>
+  <hr>
+<% end %>

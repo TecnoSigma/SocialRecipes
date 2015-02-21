@@ -1,0 +1,19 @@
+<h1><strong>Visualização por tipos de cozinha</strong></h1>
+<br>
+<% @view_type_cuisine.each do |cuisine| %>
+  <%= image_tag(cuisine.image.url(:thumb)) %>
+  <br>
+  <br>
+  <strong><%= cuisine.name_recipe %></strong>
+  <ul>
+    <li><strong>Cozinha: </strong><%= cuisine.cuisine %></li>
+    <li><strong>Tipo de Comida: </strong><%= cuisine.type_food %></li>
+    <li><strong>Preferência de Comida: </strong><%= cuisine.preferences %></li>
+    <li><strong>Quantidade de Pratos: </strong><%= cuisine.served_people %></li>
+    <li><strong>Tempo de Preparo (hh:mm): </strong><%= cuisine.time_preparation.hour.to_s + ":" + cuisine.time_preparation.min.to_s %></li>
+    <li><strong>Dificuldade: </strong><%= cuisine.dificulty %></li>
+    <li><strong>Ingredientes: </strong><%= cuisine.ingredients %></li>
+    <li><strong>Passo a Passo: </strong><%= cuisine.directions %></li>
+  </ul>
+  <hr>
+<% end %>
