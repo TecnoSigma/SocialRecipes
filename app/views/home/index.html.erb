@@ -14,6 +14,12 @@
     <li><strong>Dificuldade: </strong><%= recipe.dificulty %></li>
     <li><strong>Ingredientes: </strong><%= recipe.ingredients %></li>
     <li><strong>Passo a Passo: </strong><%= recipe.directions %></li>
+  <% if recipe.favorite? %>
+    <% @favorite = "Sim" %>
+  <% else %>
+    <% @favorite = "Não" %>
+  <% end %>
+  <li><strong>Favorita: </strong><%= @favorite %></li><br>
   </ul>
   <hr>
 <% end %>
