@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
   
-  let(:old_recipe)     {{ name_recipe: "Angu_1", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1}}
-  let(:recent_recipe)  {{ name_recipe: "Angu_2", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1}}
+  let(:old_recipe)     {{ name_recipe: "Angu_1", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1, favorite: true}}
+  let(:recent_recipe)  {{ name_recipe: "Angu_2", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1, favorite: false}}
 
   describe "Should view last 20 recipes" do
 

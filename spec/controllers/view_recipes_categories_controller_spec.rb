@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ViewRecipesCategoriesController, type: :controller do
 
-  let(:recipe_1)  {{ name_recipe: "Angu_1", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1}}
-  let(:recipe_2)  {{ name_recipe: "Angu_2", cuisine: "Angolana", type_food: "Sobremesa", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1}}
+  let(:recipe_1)  {{ name_recipe: "Angu_1", cuisine: "Brasileira", type_food: "Principal", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1, favorite: true}}
+  let(:recipe_2)  {{ name_recipe: "Angu_2", cuisine: "Angolana", type_food: "Sobremesa", preferences: "Calórica", served_people: 5, time_preparation: "00:30", dificulty: "Fácil", ingredients: "Fubá, Água e Sal", directions: 'Misturar tudo',  image_file_name: "angu.jpg", image_content_type: "image/jpg", image_file_size: 1, favorite: false}}
 
   before do
     @r_1 = Recipe.create!(recipe_1)      
