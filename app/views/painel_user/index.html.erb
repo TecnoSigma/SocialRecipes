@@ -18,12 +18,21 @@
     <li><strong>Dificuldade: </strong><%= recipe.dificulty %></li>
     <li><strong>Ingredientes: </strong><%= recipe.ingredients %></li>
     <li><strong>Passo a Passo: </strong><%= recipe.directions %></li>
-  <% if recipe.favorite? %>
-    <% @favorite = "Sim" %>
-  <% else %>
-    <% @favorite = "Não" %>
-  <% end %>
-  <li><strong>Favorita: </strong><%= @favorite %></li><br>
+    <% if recipe.favorite? %>
+      <% @favorite = "Sim" %>
+    <% else %>
+      <% @favorite = "Não" %>
+    <% end %>
+    <li><strong>Favorita: </strong><%= @favorite %></li><br>
   </ul>
+  <%= form_tag(painel_user_edit_recipe_path, :method => "post") do %>
+    <% hidden_field_tag 'id', recipe.id %>
+    <%= submit_tag "Editar Receita" %>
+  <% end %>
+  <br>
+  <%= form_tag(painel_user_edit_recipe_path, :method => "post") do %>
+    <% hidden_field_tag 'id', recipe.id %>
+    <%= submit_tag "Excluir Receita" %>
+  <% end %>
   <hr>
 <% end %>

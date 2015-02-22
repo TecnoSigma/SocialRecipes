@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :painel_user,               only: [:index]
   resources :view_recipes_categories,   only: [:index]
 
+  get '/painel_user/edit_recipe',                  to: 'painel_user#edit_recipe'
+
   get '/view_recipes_categories/type_food',        to: 'view_recipes_categories#type_food'
   get '/view_recipes_categories/type_preference',  to: 'view_recipes_categories#type_preference'
   get '/view_recipes_categories/type_cuisine',     to: 'view_recipes_categories#type_cuisine'
