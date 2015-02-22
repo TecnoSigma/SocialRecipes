@@ -1,3 +1,14 @@
+<br>
+<%= link_to "Login", user_session_path %>
+<br><br>
+<p><strong>Visualização de Receitas</strong></p>
+<br>
+<%= link_to 'Tipos de Cozinha',  view_recipes_categories_type_cuisine_path %>
+<br>
+<%= link_to 'Tipos de Comida',  view_recipes_categories_type_food_path %>
+<br>
+<%= link_to 'Tipos de Preferência',  view_recipes_categories_type_preference_path %>
+<br><br>
 <h1><strong>Últimas Receitas</strong></h1>
 <br>
 <% @last_recipes.each do |recipe| %>
