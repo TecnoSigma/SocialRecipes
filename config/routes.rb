@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :types
   resources :view_recipes,              only: [:show]
   resources :painel_adm,                only: [:index, :show]
-  resources :painel_user,               only: [:index, :show]
+  resources :painel_user,               only: [:index]
   resources :view_recipes_categories,   only: [:index]
 
   get '/view_recipes_categories/type_food',        to: 'view_recipes_categories#type_food'

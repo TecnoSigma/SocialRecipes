@@ -1,0 +1,29 @@
+<h1><strong>Painel Usuário</strong></h1>
+<br>
+<p><strong>Cadastramento</strong></p>
+<%= link_to 'Cadastro de Receitas', new_recipe_path %>
+<hr>
+<br>
+<% @recipes_user.each do |recipe| %>
+  <%= image_tag(recipe.image.url(:thumb)) %>
+  <br>
+  <br>
+  <strong><%= recipe.name_recipe %></strong>
+  <ul>
+    <li><strong>Cozinha: </strong><%= recipe.cuisine %></li>
+    <li><strong>Tipo de Comida: </strong><%= recipe.type_food %></li>
+    <li><strong>Preferência de Comida: </strong><%= recipe.preferences %></li>
+    <li><strong>Quantidade de Pratos: </strong><%= recipe.served_people %></li>
+    <li><strong>Tempo de Preparo (hh:mm): </strong><%= recipe.time_preparation.hour.to_s + ":" + recipe.time_preparation.min.to_s %></li>
+    <li><strong>Dificuldade: </strong><%= recipe.dificulty %></li>
+    <li><strong>Ingredientes: </strong><%= recipe.ingredients %></li>
+    <li><strong>Passo a Passo: </strong><%= recipe.directions %></li>
+  <% if recipe.favorite? %>
+    <% @favorite = "Sim" %>
+  <% else %>
+    <% @favorite = "Não" %>
+  <% end %>
+  <li><strong>Favorita: </strong><%= @favorite %></li><br>
+  </ul>
+  <hr>
+<% end %>

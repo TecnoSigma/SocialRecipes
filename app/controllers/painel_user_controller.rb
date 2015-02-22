@@ -1,10 +1,9 @@
 class PainelUserController < ApplicationController
-
-  def show
-  end
+  
+  before_action :authenticate_user!
 
   def index
-    render 'show'
+    @recipes_user = Recipe.all.where(owner: current_user.id)
   end
 
 end
